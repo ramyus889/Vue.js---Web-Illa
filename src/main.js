@@ -7,6 +7,8 @@ import PrimeVue from 'primevue/config';
 import { createApp } from 'vue';
 import App from './App.vue';
 
+import UseTabsImage from './components/UseTabsImage.vue';
+
 import { createRouter, createWebHistory } from 'vue-router';
 import { routes } from './router/routes.js';
 
@@ -22,6 +24,7 @@ const router = createRouter({
   routes
 });
 
+app.component('UseTabsImage', UseTabsImage);
 app.use(router);
 app.use(createPinia());
 app.mount('#app');

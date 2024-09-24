@@ -1,4 +1,11 @@
-<script setup></script>
+<script>
+export default {
+  name: 'UseDataSource',
+  mounted() {
+    document.title = 'Integrations dev';
+  }
+};
+</script>
 <template>
   <div class="flex flex-col gap-7">
     <div class="flex lg:flex-row flex-col gap-10 mt-[160px] items-center">

@@ -1,4 +1,11 @@
-<script setup></script>
+<script>
+export default {
+  name: 'MainFlow',
+  mounted() {
+    document.title = 'illa Flow dev';
+  }
+};
+</script>
 <template>
   <div class="flex place-content-center mt-[160px]">
     <div class="">

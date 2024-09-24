@@ -1,5 +1,10 @@
-<script setup>
-import UseTabsImage from './UseTabsImage.vue';
+<script>
+export default {
+  name: 'UseMain',
+  mounted() {
+    document.title = 'illa dev';
+  }
+};
 </script>
 <template>
   <div class="flex place-content-center mt-[164px] px-5">
