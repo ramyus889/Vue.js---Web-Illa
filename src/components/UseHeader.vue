@@ -1,14 +1,22 @@
 <script setup>
+import { useRoute } from 'vue-router';
 import UseDrawer from './UseDrawer.vue';
+
+const useClass = 'transition-all hover:undeline';
+const route = useRoute();
+
+function isActive(path) {
+  return route.path === path ? 'underline' : '';
+}
 </script>
 
 <template>
-  <div class="fixed z-50 top-0 left-0 right-0">
+  <div class="fixed top-0 left-0 right-0 z-50">
     <header
       class="flex justify-between px-[40px] py-[15px] items-center backdrop-filter backdrop-blur-[15px] bg-black bg-opacity-50"
     >
       <div class="flex items-center gap-5">
-        <RouterLink to="/">
+        <RouterLink to="/" :class="[useClass, isActive('/')]">
           <svg
             width="43"
             height="20"
@@ -33,32 +41,32 @@ import UseDrawer from './UseDrawer.vue';
           </svg>
         </RouterLink>
         <div class="lg:flex hidden gap-[8px] items-center">
-          <RouterLink to="/illa-flow" class="px-[16px] font-bold text-[14px]">ILLA Flow</RouterLink>
-          <RouterLink to="/Integrations" class="px-[16px] font-bold text-[14px]"
+          <RouterLink to="/illa-flow" :class="[useClass, isActive('/illa-flow')]" class="px-[16px] font-bold text-[14px]">ILLA Flow</RouterLink>
+          <RouterLink to="/Integrations" :class="[useClass, isActive('/Integrations')]" class="px-[16px] font-bold text-[14px]"
             >Integrations</RouterLink
           >
         </div>
       </div>
       <div class="block lg:hidden"><UseDrawer /></div>
-      <div class="lg:flex hidden items-center gap-5">
+      <div class="items-center hidden gap-5 lg:flex">
         <a
           href="#"
-          class="relative duration-500 group cursor-pointer text-sky-50 overflow-hidden h-12 w-52 rounded-2xl bg-sky-800 p-2 flex justify-center items-center font-extrabold"
+          class="relative flex items-center justify-center h-12 p-2 overflow-hidden font-extrabold duration-500 cursor-pointer group text-sky-50 w-52 rounded-2xl bg-sky-800"
         >
           <div
-            class="absolute z-10 w-48 h-48 rounded-full group-hover:scale-150 transition-all duration-500 ease-in-out bg-sky-900 delay-150 group-hover:delay-75"
+            class="absolute z-10 w-48 h-48 transition-all duration-500 ease-in-out delay-150 rounded-full group-hover:scale-150 bg-sky-900 group-hover:delay-75"
           ></div>
           <div
-            class="absolute z-10 w-40 h-40 rounded-full group-hover:scale-150 transition-all duration-500 ease-in-out bg-sky-800 delay-150 group-hover:delay-100"
+            class="absolute z-10 w-40 h-40 transition-all duration-500 ease-in-out delay-150 rounded-full group-hover:scale-150 bg-sky-800 group-hover:delay-100"
           ></div>
           <div
-            class="absolute z-10 w-32 h-32 rounded-full group-hover:scale-150 transition-all duration-500 ease-in-out bg-sky-700 delay-150 group-hover:delay-150"
+            class="absolute z-10 w-32 h-32 transition-all duration-500 ease-in-out delay-150 rounded-full group-hover:scale-150 bg-sky-700 group-hover:delay-150"
           ></div>
           <div
-            class="absolute z-10 w-24 h-24 rounded-full group-hover:scale-150 transition-all duration-500 ease-in-out bg-sky-600 delay-150 group-hover:delay-200"
+            class="absolute z-10 w-24 h-24 transition-all duration-500 ease-in-out delay-150 rounded-full group-hover:scale-150 bg-sky-600 group-hover:delay-200"
           ></div>
           <div
-            class="absolute z-10 w-16 h-16 rounded-full group-hover:scale-150 transition-all duration-500 ease-in-out bg-sky-500 delay-150 group-hover:delay-300"
+            class="absolute z-10 w-16 h-16 transition-all duration-500 ease-in-out delay-150 rounded-full group-hover:scale-150 bg-sky-500 group-hover:delay-300"
           ></div>
           <p class="z-10 font-bold">Get Started For Free</p>
         </a>
